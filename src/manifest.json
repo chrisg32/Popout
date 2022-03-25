@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Popout",
+  "description": "A simple extension that allows tabs to be opened in a separate minimal window.",
+  "version": "2.0",
+  "icons": { "16": "icons/icon16.png",
+           "48": "icons/icon48.png",
+           "96": "icons/icon96.png",
+          "128": "icons/icon128.png" },
+  "background": {
+		"scripts": ["background.js"]
+	},
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["toggleIcon.js"]
+    }
+  ],
+	"permissions": [
+		"tabs"
+		],
+  "browser_action": {
+	"default_title": "Popout to external window.",
+	"default_icon": "icons/icon48.png"
+  }
+}
